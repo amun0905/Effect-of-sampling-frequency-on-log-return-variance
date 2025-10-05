@@ -1,0 +1,16 @@
+# Effect of Sampling Frequency on Log Return Variance
+
+This notebook investigates how the **sampling frequency** of log returns affects their **variance** and, consequently, Value-at-Risk (VaR) estimates.  
+It explores whether overlapping return samples (e.g., sampling biweekly returns every day vs. every week) influence the estimated volatility.
+
+## Overview
+- Simulates asset prices using **Geometric Brownian Motion (GBM)**  
+- Computes **biweekly log returns** sampled at:
+  1. **Daily frequency** (overlapping windows)
+  2. **Weekly frequency** (non-overlapping windows)
+- Compares the **standard deviation** and **autocorrelation** of sampled returns
+
+## Key Insights
+- Overlapping sampling introduces **autocorrelation** but **does not bias** the variance estimate.  
+- Daily-sampled biweekly returns produce more observations but not more independent information.  
+- VaR estimates remain consistent across sampling frequencies when autocorrelation is considered.
