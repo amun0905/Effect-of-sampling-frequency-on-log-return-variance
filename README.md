@@ -59,12 +59,5 @@ Although both represent the same 10-day horizon, their sample sizes and autocorr
 
 - Both sampling methods yield similar distributions of log returns (same mean and variance in theory).  
 - However, daily sampling produces many more overlapping observations, leading to serial correlation and smaller effective variance estimates.  
-- As a result, **VaR estimates** derived from high-frequency (overlapping) samples may be **biased downward**, underestimating long-term risk.
+- When prices are modelles as GBM with no volatility structure, sampling frequency does not change the standard deviation of the samples. 
 
----
-
-##  Key Takeaways
-
-- The **frequency of sampling** log returns directly influences the **estimated variance** and therefore VaR.  
-- **Overlapping samples** artificially smooth the return distribution and reduce the apparent volatility.  
-- For multi-day VaR estimation, it’s preferable to use **non-overlapping samples** (e.g., true weekly or biweekly returns).
